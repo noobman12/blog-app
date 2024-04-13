@@ -1,6 +1,10 @@
-import type { Config } from "tailwindcss";
+import { colors } from "@mui/material";
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,13 +12,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: { main_black: "rgb(24, 26, 42)", logo_gray: "rgb(220,221,223)" },
+      fontFamily: {
+        font_plus_jakarta_sans: ["Plus Jakarta Sans", "sans-serif"],
+        font_work_sans: ['"Work Sans"', "sans-serif"],
       },
     },
   },
   plugins: [],
 };
-export default config;
